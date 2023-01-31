@@ -23,7 +23,6 @@ const TaskForm = (props) => {
             date: new Date(enteredDate)
         }
         props.onSaveTaskData(expenseData)
-        props.onSubmission()
         setEnteredTitle('')
         setEnteredPriority('')
         setEnteredDate('')
@@ -37,18 +36,21 @@ const TaskForm = (props) => {
                     <input type='text' onChange={titleChangeHandler} value={enteredTitle}/>
                 </div>
                 <div className='new-task__control'>
-                    <label>Priority</label>
-                    <input type='text' onChange={priorityChangeHandler} value={enteredPriority}/>
-                </div>
-                <div className='new-task__control'>
                     <label>Date</label>
                     <input type='date' min='2023-01-18' max='2025-12-31' onChange={dateChangeHandler}
                            value={enteredDate}/>
                 </div>
+                <div className='new-task__control'>
+                    <label>Priority</label>
+                    <select onChange={priorityChangeHandler} value={enteredPriority}>
+                        <option value='low'>low</option>
+                        <option value='medium'>medium</option>
+                        <option value='high'>high</option>
+                    </select>
+                </div>
             </div>
             <div className='new-task__actions'>
                 <button type='submit'>Add Expense</button>
-                <button onClick={props.onCancel}>Cancel</button>
             </div>
         </form>
     )
