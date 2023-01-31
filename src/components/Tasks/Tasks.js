@@ -7,22 +7,22 @@ import TaskList from "./TaskList";
 
 const Tasks = (props) => {
 
-    const [filteredYear, setFilteredYear] = useState(2023)
+    const [filteredPriority, setFilteredPriority] = useState('all')
 
-    console.log('Year data in Expense.js ' + filteredYear)
+    console.log('Priority data in Tasks.js ' + filteredPriority)
 
-    const filterChangeHandler = (year) => {
+    const filterChangeHandler = (priority) => {
         console.log('Filter change handled by Tasks.js')
-        console.log(year + ' in Tasks.js')
-        setFilteredYear(year)
+        console.log(priority + ' in Tasks.js')
+        setFilteredPriority(priority)
     }
     const filteredTasks = props.taskData.filter((task) => {
-        return task.date.getFullYear().toString() === filteredYear
+        return task.priority === filteredPriority
     })
 
     return (
         <Card className='tasks'>
-            <TaskFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></TaskFilter>
+            <TaskFilter selected={filteredPriority} onChangeFilter={filterChangeHandler}></TaskFilter>
             <TaskList filteredTasks={filteredTasks}></TaskList>
         </Card>
     )

@@ -3,8 +3,8 @@ import React from 'react';
 import './TaskFilter.css';
 
 const TaskFilter = (props) => {
-    const filterYearHandler = (year) => {
-        props.onChangeFilter(year.target.value)
+    const filterYearHandler = (priority) => {
+        props.onChangeFilter(priority.target.value)
     }
 
     return (
@@ -12,9 +12,10 @@ const TaskFilter = (props) => {
             <div className='task-filter__control'>
                 <label>Filter by year</label>
                 <select onChange={filterYearHandler} value={props.selected.value}>
-                    <option value='2023'>2023</option>
-                    <option value='2024'>2024</option>
-                    <option value='2025'>2025</option>
+                    <option value={null}>all</option>
+                    <option value='low'>low</option>
+                    <option value='medium'>medium</option>
+                    <option value='high'>high</option>
                 </select>
             </div>
         </div>

@@ -5,7 +5,7 @@ import TaskItem from "./TaskItem";
 
 const TaskList = (props) => {
     if (props.filteredTasks.length === 0) {
-        return <p className='task-list__fallback'>No expenses found.</p>
+        return <p className='task-list__fallback'>No tasks found.</p>
     }
 
     return (

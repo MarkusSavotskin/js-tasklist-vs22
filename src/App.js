@@ -3,6 +3,7 @@ import './App.css';
 import './components/Tasks/TaskItem'
 import Tasks from './components/Tasks/Tasks';
 import NewTask from "./components/NewExpense/NewTask";
+import Card from "./components/UI/Card";
 import {useState} from "react";
 
 
@@ -11,7 +12,7 @@ const DUMMY_TASKS = [
         id: 'e1',
         date: new Date(2023, 0, 10),
         title: 'Read book',
-        priority: 'Low'
+        priority: 'low'
     },
     {
         id: 'e2',
@@ -43,10 +44,10 @@ const App = () => {
     console.log(tasks)
 
     return (
-        <div className="App">
+        <Card className="App">
             <NewTask onAddTask={addTaskHandler}></NewTask>
             <Tasks taskData={tasks}></Tasks>
-        </div>
+        </Card>
     );
 }
 

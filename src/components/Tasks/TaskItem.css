@@ -4,7 +4,7 @@
     align-items: center;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #4b4b4b;
+    background-color: rgb(230, 210, 230);
     color: white;
 }
 
@@ -23,17 +23,17 @@
     font-size: 1rem;
     flex: 1;
     margin: 0 1rem;
-    color: white;
+    color: black;
 }
 
-.task-item__price {
+.task-item__priority {
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #40005d;
+    background-color: #aa025d;
     border: 1px solid white;
     padding: 0.5rem;
-    border-radius: 12px;
+    border-radius: 20px;
 }
 
 @media (min-width: 580px) {
@@ -48,7 +48,7 @@
         font-size: 1.25rem;
     }
 
-    .task-item__price {
+    .task-item__priority {
         font-size: 1.25rem;
         padding: 0.5rem 1.5rem;
     }
