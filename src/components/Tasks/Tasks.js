@@ -17,7 +17,11 @@ const Tasks = (props) => {
         setFilteredPriority(priority)
     }
     const filteredTasks = props.taskData.filter((task) => {
-        return task.priority === filteredPriority
+        if (filteredPriority === 'all') {
+            return task.priority
+        } else {
+            return task.priority === filteredPriority
+        }
     })
 
     return (

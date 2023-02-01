@@ -10,9 +10,9 @@ const TaskFilter = (props) => {
     return (
         <div className='task-filter'>
             <div className='task-filter__control'>
-                <label>Filter by year</label>
+                <label>Filter by priority</label>
                 <select onChange={filterYearHandler} value={props.selected.value}>
-                    <option value={null}>all</option>
+                    <option value='all'>all</option>
                     <option value='low'>low</option>
                     <option value='medium'>medium</option>
                     <option value='high'>high</option>
